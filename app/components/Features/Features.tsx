@@ -11,23 +11,23 @@ type Feature = {
 const defaultFeatures: Feature[] = [
   {
     icon: "/images/features/smart-investing.svg",
-    title: "Easy, smart investing",
-    description: "Smarter investing made easy with AI and our sleek OROX app.",
+    title: "Easy, smart access",
+    description: "A simple app experience where the system does the work. No manual efforts",
   },
   {
     icon: "/images/features/growth.svg",
-    title: "Stress-free growth",
-    description: "Let automation and professional strategy do the heavy lifting.",
+    title: "Stress-free automation",
+    description: "Automation and risk controls handle the heavy lifting; you choose how to participate",
   },
   {
     icon: "/images/features/secure.svg",
     title: "Secure and transparent",
-    description: "Secure and transparent with blockchain-backed tech.",
+    description: "Independent custody, full on-chain transparency, and clear and auditable vault logic",
   },
   {
     icon: "/images/features/trust.svg",
     title: "Built with trust",
-    description: "Aussie-built, trusted and accessible to investors worldwide.",
+    description: "A synergised structure designed for safety and scalability",
   },
 ];
 
@@ -53,7 +53,7 @@ export const Features = ({
             <h2 className="mx-auto text-[34px] font-bold text-[#19191B] md:text-[56px] leading-[40px] md:leading-[68px]">
               {title}
             </h2>
-            <p className="text-[16px] text-[#19191B] md:text-[20px] leading-[24px] md:leading-[32px]">
+            <p className="text-[16px] text-[#19191B] font-medium md:text-[20px] leading-[24px] md:leading-[32px]">
               {description}
             </p>
           </div>
@@ -75,7 +75,7 @@ export const Features = ({
                   <h3 className="text-[20px] font-bold text-[#19191B] leading-[24px] md:leading-[32px]">
                     {feature.title}
                   </h3>
-                  <p className="text-[#19191B] text-[16px] leading-[24px] md:leading-[32px]">
+                  <p className="text-[#19191B] text-[16px] font-medium leading-[24px] md:leading-[32px]">
                     {feature.description}
                   </p>
                 </div>

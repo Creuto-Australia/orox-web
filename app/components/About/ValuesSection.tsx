@@ -5,7 +5,7 @@ const values = [
     icon: "/images/features/transparency.svg",
     title: "Transparency",
     description:
-      "No hidden fees, no complicated jargon—just clear, honest investing with visibility.",
+      "Clear language, on-chain visibility, and published rules with no hidden terms.",
   },
   {
     icon: "/images/features/accountability.svg",
@@ -17,7 +17,7 @@ const values = [
     icon: "/images/features/challenge.svg",
     title: "Challenge the status quo",
     description:
-      "Embracing innovation to create smarter, more secure investment solutions.",
+      "Embracing innovation to create smarter, compliant and more secure solutions.",
   },
 ];
 
@@ -27,14 +27,14 @@ export const ValuesSection = () => {
       <div className="mx-auto max-w-7xl">
         <div className="space-y-12">
           <div className="space-y-4 text-center">
-            <h2 className="text-4xl font-bold text-[#19191B] md:text-[42px] lg:text-5xl z-0">
-              The values that drive{" "}
-              <span className="relative z-0">
+            <h2 className="text-[32px] font-bold text-[#19191B] md:text-[42px] lg:text-[56px] z-0">
+              The values that drive OROX
+              {/* <span className="relative z-0">
                 <span className="absolute left-0 top-[35%] z-0 h-[80%] w-full rounded-[4px] bg-[#7878FA]/30"></span>
                 <span className="relative z-10">OROX</span>
-              </span>{" "}
+              </span>{" "} */}
             </h2>
-            <p className="text-[16px] md:text-[18px] lg:text-[20px] text-[#19191B] leading-[24px] md:leading-[28px] lg:leading-[32px]">
+            <p className="text-[16px] md:text-[18px] lg:text-[20px] text-[#19191B] leading-[24px] md:leading-[28px] lg:leading-[32px] font-medium">
               Built on trust, driven by responsibility.
             </p>
           </div>
