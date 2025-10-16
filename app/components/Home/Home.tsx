@@ -1,4 +1,3 @@
-import { Hero } from "../Hero/Hero";
 import { Navbar } from "../Navbar/Navbar";
 import { Footer } from "../Footer/Footer";
 import { Features } from "../Features/Features";
@@ -7,13 +6,13 @@ import { HomeProducts } from "../Products/HomeProducts";
 import { FAQ } from "../FAQ/FAQ";
 import Service from "../Service/Service";
 import { HomeBlog } from "../Blog/HomeBlog";
-import { PartnersMarquee } from "../Partners/PartnersMarquee";
+import NewHero from "../Hero/NewHero";
+import { BentoGrid } from "../Bento/BentoGrid";
 export default function LandingPage() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <PartnersMarquee />
+      <NewHero />
       <Features
         title={
           <span>
@@ -22,14 +21,15 @@ export default function LandingPage() {
             Just smart, data-driven investing
           </span>
         }
-        description="Skip the FOMO and stress with AI-powered strategies built by industry-leading experts."
+        description="Skip the FOMO. Access the OROX ecosystem with AI-powered, systematic strategies and on-chain rewards."
         cta="Create an account"
         path="https://orox.app/register"
       />
-      <Steps />
-      <HomeProducts />
+      <BentoGrid />
+      {/* <Steps /> */}
+      {/* <HomeProducts /> */}
       <HomeBlog />
-      <FAQ />
+      {/* <FAQ /> */}
       <Service
         tag="READY TO INVEST SMARTER?"
         description="Join OROX and access AI-powered, risk-aware strategies—built to cut through the noise and focus on long-term performance."
