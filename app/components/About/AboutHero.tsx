@@ -20,28 +20,23 @@ const AboutHero = () => {
   };
 
   return (
-    <section className="relative w-full bg-[linear-gradient(168deg,#276EDE_0%,#11032F_100%)]">
+    <section className="relative w-full">
       <div className="h-full">
         <div className="flex flex-col lg:flex-row h-full">
           {/* Left Content */}
-          <div className="text-white py-[48px] px-[16px] md:px-[60px] md:py-[80px] lg:px-[60px] xl:px-[80px] lg:py-[100px] xl:py-[147px] lg:w-1/2">
+          <div className="text-[#19191B] py-[48px] px-[16px] md:px-[60px] md:py-[80px] lg:px-[60px] xl:px-[80px] lg:py-[100px] xl:py-[147px] lg:w-1/2">
             <h1 className="text-[40px] md:text-[56px] lg:text-[60px] xl:text-[64px] font-bold leading-[48px] md:leading-[64px] lg:leading-[68px]">
               About OROX
             </h1>
-            <p className="text-[16px] md:text-[18px] lg:text-[18px] xl:text-[20px] text-white max-w-[600px] leading-[24px] md:leading-[28px] lg:leading-[30px] xl:leading-[32px] mt-[24px] md:mt-[28px] lg:mt-[30px] xl:mt-[32px]">
-              OROX transforms access to advanced investing by offering
-              risk-adjusted strategies through a seamless, user-friendly
-              platform. Whether you&apos;re seeking more consistent performance
-              with the ODN subscription or aiming to gain exposure to expertly
-              managed crypto strategies by staking the DVOX token, OROX helps
-              you invest with confidence—without the guesswork.
+            <p className="text-[16px] md:text-[18px] lg:text-[18px] xl:text-[20px] text-[#19191B] max-w-[600px] leading-[24px] md:leading-[28px] lg:leading-[30px] xl:leading-[32px] mt-[24px] md:mt-[28px] lg:mt-[30px] xl:mt-[32px] font-medium">
+            OROX is an ecosystem of independent companies focused on making data-driven market participation simple and transparent. No hype, no guesswork; just structured access to systematic programs, delivered with compliance, guardrails and a global mindset.
             </p>
             <div className="flex flex-col md:flex-row gap-3 sm:gap-4 mt-[32px] md:mt-[36px] lg:mt-[36px] xl:mt-[40px]">
-              <Button variant="white" className="whitespace-nowrap px-[32px]">
+              <Button variant="primary" className="text-[16px] md:text-[20px] font-bold w-full md:w-auto h-[48px] md:h-[64px] px-[32px]">
                 <Link href="https://orox.app/join-waitlist" target="_blank" rel="noopener noreferrer">Join waitlist</Link>
               </Button>
-              <Button variant="outline" className="whitespace-nowrap px-[32px]">
-                <Link href="/contact">Get in touch with us</Link>
+              <Button variant="outline" className="!text-[#293483] whitespace-nowrap px-[32px]">
+                <Link href="/contact">Contact us</Link>
               </Button>
             </div>
           </div>

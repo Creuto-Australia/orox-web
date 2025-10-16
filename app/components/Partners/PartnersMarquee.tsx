@@ -51,7 +51,7 @@ export const PartnersMarquee = () => {
     <section className="py-4 sm:py-6 md:py-8 bg-[#070926] text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 overflow-hidden">
         <div className="flex flex-col md:flex-row md:items-center overflow-hidden">
-          <h2 className="text-base sm:text-sm font-medium md:w-36 md:shrink-0 mb-4 sm:mb-6 md:mb-0 text-center md:text-left">
+          <h2 className="text-[16px] md:text-[14px] font-bold md:w-36 md:shrink-0 mb-4 sm:mb-6 md:mb-0 text-center md:text-left">
             Global partners working with OROX
           </h2>
 

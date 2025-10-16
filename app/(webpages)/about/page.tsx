@@ -11,8 +11,8 @@ export default function AboutPage() {
   return (
     <div className="w-full">
       <AboutHero />
-      <OpusMomentus />
-      <ProductsSection />
+      {/* <OpusMomentus /> */}
+      {/* <ProductsSection /> */}
       <ValuesSection />
       <MissionSection />
       <TeamSection />
