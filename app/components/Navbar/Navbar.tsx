@@ -306,6 +306,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
 export const Navbar = () => {
   const pathname = usePathname();
   const isDarkTheme = pathname === "/products-dvox";
+  const isHomePage = pathname === "/";
   const [isQROpen, setIsQROpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -313,6 +314,7 @@ export const Navbar = () => {
   const [, setNavbarHeight] = useState(70);
   const navbarRef = useRef<HTMLDivElement>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Measure navbar height for dropdown positioning
   useEffect(() => {
@@ -349,6 +351,20 @@ export const Navbar = () => {
       setIsMobileMenuOpen(false);
     }
   }, [activeDropdown]);
+
+  // Handle scroll to change navbar appearance
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // // Handle body scroll lock when mobile menu is open
   // useEffect(() => {
@@ -505,10 +521,14 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full border-b ${
-        isDarkTheme
-          ? "bg-[#000000] text-white border-[#3C3C3C]"
-          : "bg-white border-[#F4F4F4]"
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        isHomePage && !isScrolled
+          ? "bg-transparent text-white border-transparent"
+          : `border-b ${
+              isDarkTheme
+                ? "bg-[#000000] text-white border-[#3C3C3C]"
+                : "bg-white text-[#19191B] border-[#F4F4F4]"
+            }`
       }`}
       ref={navbarRef}
     >
@@ -516,7 +536,11 @@ export const Navbar = () => {
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
-            src={isDarkTheme ? "/images/logo-white.png" : "/images/logo.png"}
+            src={
+              (isHomePage && !isScrolled) || isDarkTheme
+                ? "/images/logo-white.png"
+                : "/images/logo.png"
+            }
             alt="OROX"
             width={400}
             height={400}
@@ -529,7 +553,11 @@ export const Navbar = () => {
           {/* Mobile menu button */}
           <button
             className={`md:hidden p-2 rounded-full transition-colors ${
-              isDarkTheme ? "hover:bg-white/10" : "hover:bg-[#E9E9EF]"
+              isHomePage && !isScrolled
+                ? "hover:bg-white/10 text-white"
+                : isDarkTheme
+                ? "hover:bg-white/10 text-white"
+                : "hover:bg-[#E9E9EF] text-[#293483]"
             }`}
             onClick={() => {
               setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -594,8 +622,12 @@ export const Navbar = () => {
             trigger={
               <div
                 className={`flex items-center space-x-1 ${
-                  isDarkTheme ? "hover:bg-white/10" : "hover:bg-[#E9E9EF]"
-                } rounded-md px-3 py-2 transition-colors`}
+                  isHomePage && !isScrolled
+                    ? "hover:bg-white/10 text-white"
+                    : isDarkTheme
+                    ? "hover:bg-white/10 text-white"
+                    : "hover:bg-[#E9E9EF] text-[#19191B]"
+                } rounded-md px-3 py-2 transition-colors font-medium`}
               >
                 <span>Products</span>
                 <svg
@@ -630,16 +662,24 @@ export const Navbar = () => {
           <Link
             href="/about"
             className={`px-3 py-2 rounded-md ${
-              isDarkTheme ? "hover:bg-white/10" : "hover:bg-[#E9E9EF]"
-            } transition-colors`}
+              isHomePage && !isScrolled
+                ? "hover:bg-white/10 text-white"
+                : isDarkTheme
+                ? "hover:bg-white/10 text-white"
+                : "hover:bg-[#E9E9EF] text-[#19191B]"
+            } transition-colors font-medium`}
           >
             About
           </Link>
           <Link
             href="/contact"
             className={`px-3 py-2 rounded-md ${
-              isDarkTheme ? "hover:bg-white/10" : "hover:bg-[#E9E9EF]"
-            } transition-colors`}
+              isHomePage && !isScrolled
+                ? "hover:bg-white/10 text-white"
+                : isDarkTheme
+                ? "hover:bg-white/10 text-white"
+                : "hover:bg-[#E9E9EF] text-[#19191B]"
+            } transition-colors font-medium`}
           >
             Contact
             {/* <Dropdown
@@ -733,7 +773,7 @@ export const Navbar = () => {
                       setActiveSubmenu("products");
                     }}
                   >
-                    <span>Products</span>
+                    <span className="font-medium">Products</span>
                     <Image
                       src={
                         isDarkTheme
@@ -789,7 +829,7 @@ export const Navbar = () => {
                         : "text-[#19191B] hover:bg-[#E9E9EF]"
                     } mb-[16px] transition-colors px-[8px] py-2 rounded-lg mx-[8px]`}
                   >
-                    <Link href="/contact">Contact</Link>
+                    <Link href="/contact" className="font-medium">Contact</Link>
                   </div>
                   <hr
                     className={`border-t ${
@@ -869,7 +909,7 @@ export const Navbar = () => {
 
         {/* Right Section */}
         <div className="hidden md:flex items-center space-x-2 md:space-x-3 lg:space-x-4">
-          <Link
+          {/* <Link
             href="https://orox.app/login"
             target="_blank"
             rel="noopener noreferrer"
@@ -880,32 +920,58 @@ export const Navbar = () => {
             >
               Log in
             </Button>
-          </Link>
+          </Link> */}
           <Link
             href="https://orox.app/join-waitlist"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button
-              variant={isDarkTheme ? "secondary" : "primary"}
-              className="px-3 md:px-4 lg:px-6 whitespace-nowrap"
+              variant={
+                isHomePage && !isScrolled
+                  ? "secondary"
+                  : isDarkTheme
+                  ? "secondary"
+                  : "primary"
+              }
+              className={`px-3 md:px-4 lg:px-6 whitespace-nowrap transition-colors ${
+                isHomePage && !isScrolled
+                  ? "!bg-white !text-[#19191B] hover:!bg-gray-100 !border-white"
+                  : ""
+              }`}
             >
               Join waitlist
             </Button>
           </Link>
 
-          <hr className="h-[36px] w-[2px] bg-[#C9CCE0]" />
+          <hr
+            className={`h-[36px] w-[2px] transition-colors ${
+              isHomePage && !isScrolled
+                ? "bg-white/30"
+                : isDarkTheme
+                ? "bg-[#3C3C3C]"
+                : "bg-[#C9CCE0]"
+            }`}
+          />
 
           {/* QR Code Button */}
           <button
             onClick={() => setIsQROpen(!isQROpen)}
             className={`relative flex h-10 w-10 items-center justify-center rounded-[8px] md:p-1.5 lg:p-2 ${
-              isDarkTheme ? "hover:bg-[#3C3C3C]" : "hover:bg-[#E9E9EF]"
+              isHomePage && !isScrolled
+                ? "hover:bg-white/10"
+                : isDarkTheme
+                ? "hover:bg-[#3C3C3C]"
+                : "hover:bg-[#E9E9EF]"
             }`}
             aria-label="QR code"
           >
             <Image
-              src={isDarkTheme ? "/icons/QR-light.svg" : "/icons/QR.svg"}
+              src={
+                (isHomePage && !isScrolled) || isDarkTheme
+                  ? "/icons/QR-light.svg"
+                  : "/icons/QR.svg"
+              }
               alt="QR Icon"
               width={20}
               height={20}
