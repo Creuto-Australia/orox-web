@@ -22,8 +22,8 @@ export default function LandingPage() {
           </span>
         }
         description="Skip the FOMO. Access the OROX ecosystem with AI-powered, systematic strategies and on-chain rewards."
-        cta="Create an account"
-        path="https://orox.app/register"
+        cta="Join waitlist"
+        path="https://orox.app/join-waitlist"
       />
       <BentoGrid />
       {/* <Steps /> */}

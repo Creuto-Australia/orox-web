@@ -71,7 +71,7 @@ export const HomeBlog = () => {
   });
 
   return (
-    <section className="w-full px-[16px] py-[44px] md:px-[80px] md:py-[88px] overflow-hidden">
+    <section className="w-full px-[16px] py-[48px] md:px-[80px] md:py-[88px] overflow-hidden">
       <div className="mx-auto max-w-7xl">
         <div className="space-y-16">
           {/* Header */}
