@@ -1,9 +1,9 @@
 import { Navbar } from "../Navbar/Navbar";
 import { Footer } from "../Footer/Footer";
 import { Features } from "../Features/Features";
-import { Steps } from "../Steps/Steps";
-import { HomeProducts } from "../Products/HomeProducts";
-import { FAQ } from "../FAQ/FAQ";
+// import { Steps } from "../Steps/Steps";
+// import { HomeProducts } from "../Products/HomeProducts";
+// import { FAQ } from "../FAQ/FAQ";
 import Service from "../Service/Service";
 import { HomeBlog } from "../Blog/HomeBlog";
 import NewHero from "../Hero/NewHero";
