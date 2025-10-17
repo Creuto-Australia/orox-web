@@ -256,7 +256,7 @@ export const BentoGrid = () => {
           <p className="text-[16px] md:text-[20px] text-[#19191B] leading-[24px] md:leading-[32px] mt-[24px] mb-[48px] max-w-[800px] mx-auto font-medium">
             OROX is built by specialists in finance, AI, and blockchain to
             create an ecosystem for accessing systematic, on-chain programs.
-            It's built for clarity, control and compliance.
+            It&apos;s built for clarity, control and compliance.
           </p>
         </div>
 
