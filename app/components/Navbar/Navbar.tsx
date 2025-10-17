@@ -523,7 +523,7 @@ export const Navbar = () => {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         isHomePage && !isScrolled
-          ? "bg-transparent text-white border-transparent"
+          ? "bg-transparent text-white border-b md:border-transparent border-[#3C3C3C]"
           : `border-b ${
               isDarkTheme
                 ? "bg-[#000000] text-white border-[#3C3C3C]"
@@ -549,7 +549,31 @@ export const Navbar = () => {
         </Link>
 
         {/* Mobile menu button and QR section */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 md:space-x-4">
+          <Link
+            href="https://orox.app/join-waitlist"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden"
+          >
+            <Button
+              variant={
+                isHomePage && !isScrolled
+                  ? "secondary"
+                  : isDarkTheme
+                  ? "secondary"
+                  : "primary"
+              }
+              className={`px-3 py-2 text-sm whitespace-nowrap transition-colors ${
+                isHomePage && !isScrolled
+                  ? "!bg-white !text-[#19191B] hover:!bg-gray-100 !border-white"
+                  : ""
+              }`}
+            >
+              Join waitlist
+            </Button>
+          </Link>
+
           {/* Mobile menu button */}
           <button
             className={`md:hidden p-2 rounded-full transition-colors ${
@@ -947,7 +971,7 @@ export const Navbar = () => {
           <hr
             className={`h-[36px] w-[2px] transition-colors ${
               isHomePage && !isScrolled
-                ? "bg-white/30"
+                ? "bg-[#9499C1]"
                 : isDarkTheme
                 ? "bg-[#3C3C3C]"
                 : "bg-[#C9CCE0]"
@@ -968,7 +992,9 @@ export const Navbar = () => {
           >
             <Image
               src={
-                (isHomePage && !isScrolled) || isDarkTheme
+                isHomePage && !isScrolled
+                  ? "/icons/QR-white.svg"
+                  : isDarkTheme
                   ? "/icons/QR-light.svg"
                   : "/icons/QR.svg"
               }
