@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 
 const DVOXCard = () => (
-  <div className="w-full lg:w-[511px] h-[500px] sm:h-[534px]">
+  <div className="w-full lg:flex-[0_0_40%] h-[500px] sm:h-[534px]">
     <div className="relative rounded-3xl overflow-hidden h-full w-full">
       <div className="absolute inset-0 bg-[#12121B]">
         <Image
@@ -46,7 +46,7 @@ const DVOXCard = () => (
 );
 
 const ODNCard = () => (
-  <div className="w-full lg:w-[761px] h-[560px] sm:h-[534px]">
+  <div className="w-full lg:flex-[0_0_60%] h-[560px] sm:h-[534px]">
     <div className="relative h-full w-full rounded-3xl overflow-hidden">
       <Image
         src="/images/bento/bento-2-bg.png"
@@ -65,7 +65,7 @@ const ODNCard = () => (
         priority
       />
 
-      <div className="lg:hidden relative z-10 h-full flex flex-col justify-between p-6">
+      <div className="sm:hidden relative z-10 h-full flex flex-col justify-between p-6 overflow-y-hidden">
         <div className="text-white mt-4">
           <h3 className="text-[28px] font-bold mb-2 leading-[40px]">ODN On-Chain Vaults</h3>
           <p className="text-[16px] text-white leading-[24px] font-medium">
@@ -76,19 +76,19 @@ const ODNCard = () => (
           </p>
         </div>
         
-        <div className="flex justify-center items-end pb-4 relative">
+        <div className="flex justify-center items-end relative -bottom-40">
           <Image
             src="/images/bento/bento-2-mobile.png"
             alt="ODN Mobile App"
             width={1000}
             height={1000}
             priority
-            className="h-[280px] w-auto object-contain hover:scale-105 transition-all duration-300 absolute"
+            className="h-[420px] sm:h-[280px] w-auto object-contain hover:scale-105 transition-all duration-300 absolute"
           />
         </div>
       </div>
 
-      <div className="hidden lg:block relative h-full">
+      <div className="hidden sm:block relative h-full">
         <div className="absolute top-1/2 -translate-y-[35%] left-10">
           <Image
             src="/images/bento/bento-2-mobile.png"
@@ -143,20 +143,20 @@ const OROXAppCard = () => (
           </p>
         </div>
 
-        <div className="flex justify-center items-end pb-4 relative">
+        <div className="block lg:hidden flex justify-center items-end pb-4 relative -mb-40">
           <Image
             src="/images/bento/bento-3-mobile.png"
             alt="OROX App Mobile"
             width={1000}
             height={1000}
             priority
-            className="h-[280px] bottom-0 w-auto object-contain hover:scale-105 transition-all duration-300 z-10"
+            className="h-[420px] bottom-0 w-auto object-contain hover:scale-105 transition-all duration-300 z-10"
           />
         </div>
       </div>
 
       <div className="hidden lg:block h-full">
-        <div className="absolute right-20 -bottom-20 z-10">
+        <div className="absolute right-20 -bottom-[100px] z-10">
           <Image
             src="/images/bento/bento-3-mobile.png"
             alt="OROX App Mobile"
@@ -184,7 +184,7 @@ const OROXAppCard = () => (
 );
 
 const OpusMomentusCard = () => (
-  <div className="w-full lg:w-[760px] h-[500px] sm:h-[488px]">
+  <div className="w-full lg:flex-[0_0_60%] h-[500px] sm:h-[488px]">
     <div className="relative rounded-3xl overflow-hidden h-full w-full bg-[#0A0A0F] ">
       <div className="absolute top-0 left-0 right-0 h-52 lg:h-72 rounded-tl-3xl rounded-tr-3xl overflow-hidden">
         <video
@@ -216,7 +216,7 @@ const OpusMomentusCard = () => (
 );
 
 const AlphaFundCard = () => (
-  <div className="w-full lg:w-[511px] h-[450px] sm:h-[488px]">
+  <div className="w-full lg:flex-[0_0_40%] h-[450px] sm:h-[488px]">
     <div className="relative rounded-3xl overflow-hidden h-full w-full">
       <div className="absolute inset-0">
         <Image
@@ -269,7 +269,7 @@ export const BentoGrid = () => {
         </div>
 
         <div className="hidden lg:flex lg:flex-col lg:items-center lg:gap-2">
-          <div className="flex justify-start items-center gap-2">
+          <div className="w-full flex justify-start items-center gap-2">
             <DVOXCard />
             <ODNCard />
           </div>
@@ -278,7 +278,7 @@ export const BentoGrid = () => {
             <OROXAppCard />
           </div>
 
-          <div className="flex justify-start items-center gap-2">
+          <div className="w-full flex justify-start items-center gap-2">
             <OpusMomentusCard />
             <AlphaFundCard />
           </div>

@@ -45,7 +45,7 @@ const AboutHero = () => {
           <div className="relative lg:w-1/2 min-h-[400px] md:min-h-[500px] lg:min-h-[550px]">
             <video
               ref={videoRef}
-              src="/videos/About.mp4"
+              src="/videos/AboutNew.mp4"
               autoPlay
               muted
               loop
