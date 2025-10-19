@@ -73,7 +73,7 @@ export const HomeBlog = () => {
   return (
     <section className="w-full px-[16px] py-[48px] md:px-[80px] md:py-[88px] overflow-hidden">
       <div className="mx-auto max-w-7xl">
-        <div className="space-y-16">
+        <div className="space-y-[48px]">
           {/* Header */}
           <h2 className="text-[34px] md:text-[56px] font-bold text-[#19191B] text-center leading-[40px] md:leading-[68px]">
             Insights, trends and smart investing
