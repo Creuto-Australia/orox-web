@@ -32,10 +32,10 @@ const AboutHero = () => {
             OROX is an ecosystem of independent companies focused on making data-driven market participation simple and transparent. No hype, no guesswork; just structured access to systematic programs, delivered with compliance, guardrails and a global mindset.
             </p>
             <div className="flex flex-col md:flex-row gap-3 sm:gap-4 mt-[32px] md:mt-[36px] lg:mt-[36px] xl:mt-[40px]">
-              <Button variant="primary" className="text-[16px] md:text-[20px] font-bold w-full md:w-auto h-[48px] md:h-[64px] px-[32px]">
+              <Button variant="primary" className="text-[16px] md:text-[20px] font-bold w-full md:w-auto h-[48px] md:h-[64px] px-[32px] !py-2 md:py-4">
                 <Link href="https://orox.app/join-waitlist" target="_blank" rel="noopener noreferrer">Join waitlist</Link>
               </Button>
-              <Button variant="outline" className="!text-[#293483] whitespace-nowrap px-[32px]">
+              <Button variant="outline" className="!text-[#293483] whitespace-nowrap px-[32px] !py-2 md:py-4">
                 <Link href="/contact">Contact us</Link>
               </Button>
             </div>

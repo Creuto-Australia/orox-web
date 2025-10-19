@@ -30,7 +30,7 @@ export const InvestingSection = () => {
             <div className="w-full xl:w-auto">
               <Button
                 variant="white"
-                className="w-full xl:w-auto text-[16px] md:text-[20px] px-4 md:px-8 py-3 md:py-4 border border-[#78CAB9]"
+                className="w-full xl:w-auto text-[16px] md:text-[20px] px-4 md:px-8 !py-2 md:py-4 border border-[#78CAB9]"
               >
                 <Link href="https://orox.app/join-waitlist" target="_blank" rel="noopener noreferrer">Join waitlist</Link>
               </Button>
