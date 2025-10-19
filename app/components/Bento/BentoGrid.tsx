@@ -216,27 +216,36 @@ const OpusMomentusCard = () => (
 );
 
 const AlphaFundCard = () => (
-  <div className="w-full lg:flex-[0_0_40%] h-[450px] sm:h-[488px]">
+  <div className="w-full lg:flex-[0_0_40%] h-[550px] sm:h-[488px]">
     <div className="relative rounded-3xl overflow-hidden h-full w-full">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 hidden lg:block">
         <Image
           src="/images/bento/bento-5-bg.png"
           alt="Background"
           fill
           className="object-cover"
         />
+      </div>
 
-        <div className="relative h-full flex flex-col items-start p-6 sm:p-8">
-          <h3 className="text-[28px] font-bold text-white mb-2 leading-[40px]">
-            OROX Global Alpha Fund
-          </h3>
-          <p className="text-[16px] text-white leading-[24px] font-medium">
-            Professionally managed vehicle for qualified investors only. A
-            traditional managed fund implementing systematic, quantitative
-            methods; supported by risk controls, independent oversight, and
-            clear operating policies.
-          </p>
-        </div>
+      <div className="absolute inset-0 block lg:hidden">
+        <Image
+          src="/images/bento/bento-5-bgsm.png"
+          alt="Background"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <div className="relative h-full flex flex-col items-start p-6 sm:p-8 z-10">
+        <h3 className="text-[28px] font-bold text-white mb-2 leading-[40px]">
+          OROX Global Alpha Fund
+        </h3>
+        <p className="text-[16px] text-white leading-[24px] font-medium">
+          Professionally managed vehicle for qualified investors only. A
+          traditional managed fund implementing systematic, quantitative
+          methods; supported by risk controls, independent oversight, and
+          clear operating policies.
+        </p>
       </div>
     </div>
   </div>
