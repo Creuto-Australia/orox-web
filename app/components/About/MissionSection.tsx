@@ -12,7 +12,7 @@ export const MissionSection = () => {
           <div className="mt-[24px]">
             <p className="text-[16px] md:text-[18px] lg:text-[20px] text-[#19191B] leading-[24px] md:leading-[28px] lg:leading-[32px]">
               To make pro-level participation accessible to everyone.<br/> We create
-              secure, transparent, automated solutions for everyday participants
+              secure, transparent, and automated solutions for everyday participants
               and institutions.
             </p>
             <p className="text-[16px] md:text-[18px] lg:text-[20px] text-[#19191B] leading-[24px] md:leading-[28px] lg:leading-[32px] mt-[16px] md:mt-[20px] lg:mt-[24px]">

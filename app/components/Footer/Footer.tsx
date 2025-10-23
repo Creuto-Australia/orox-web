@@ -67,7 +67,7 @@ export const Footer = () => {
             <p
               className={`${
                 isDarkTheme ? "text-white" : "text-[#19191B]"
-              } max-w-[400px] mb-6 text-[16px] leading-[2]`}
+              } max-w-[400px] mb-6 text-[16px] leading-[2] font-medium`}
             >
               OROX puts your investing on autopilot. Powered by AI, driven by data and secured by blockchain.
             </p>
@@ -243,15 +243,15 @@ export const Footer = () => {
               <div
                 className={`text-[12px] text-${
                   isDarkTheme ? "white" : "#19191B"
-                } text-right flex flex-col justify-end mr-[24px] md:mr-0`}
+                } text-right flex flex-col justify-end mr-[24px] md:mr-0 font-medium`}
               >
                 <p>© 2025 — Copyright. All Rights reserved</p>
                 <div className="flex flex-col md:flex-row gap-[16px] md:gap-[4px] justify-end mt-[20px] md:mt-[8px]">
-                  <Link href="/privacy-policy" className="underline">
+                  <Link href="/privacy-policy" className="underline text-[14px]">
                     Privacy Policy
                   </Link>
                   <span className="hidden lg:block">|</span>
-                  <Link href="/terms-of-service" className="underline">
+                  <Link href="/terms-of-service" className="underline text-[14px]">
                     Terms of Service
                   </Link>
                 </div>
@@ -320,15 +320,15 @@ export const Footer = () => {
               <div>
                 <h3
                   className={`text-[20px] font-bold mb-[24px] ${
-                    isDarkTheme ? "text-white" : "text-black"
+                    isDarkTheme ? "text-white" : "text-[#19191B]"
                   }`}
                 >
                   Contact us
                 </h3>
                 <div
                   className={`text-${
-                    isDarkTheme ? "white" : "[#19191B]/50"
-                  } text-[14px] space-y-[8px] flex flex-col`}
+                    isDarkTheme ? "white" : "[#3C3C3C]"
+                  } text-[14px] space-y-[8px] flex flex-col font-medium`}
                 >
                   <a href="tel:+61 295 336 214" className="inline-block">
                     +61 295 336 214
@@ -344,8 +344,8 @@ export const Footer = () => {
                 </h3>
                 <div
                   className={`text-${
-                    isDarkTheme ? "white" : "[#19191B]/50"
-                  } text-[14px]`}
+                    isDarkTheme ? "white" : "[#3C3C3C]"
+                  } text-[14px] font-medium`}
                 >
                   <a
                     href="https://maps.app.goo.gl/k7RVNir6k7PXLXEr6"
@@ -377,48 +377,21 @@ export const Footer = () => {
       <div
         className={
           isDarkTheme
-            ? "bg-[#19191B] text-white/60 text-[12px]"
-            : "bg-[#EAF5FF] text-[#19191B]/60 text-[12px]"
+            ? "bg-[#19191B] text-[#999999] text-[12px]"
+            : "bg-[#EAF5FF] text-[#19191B] text-[12px]"
         }
       >
-        <div className="max-w-7xl mx-4 md:mx-auto py-8 md:py-8">
-          <p>© 2025 OROX Management Ltd. All Rights Reserved.</p>
+        <div className="max-w-7xl mx-4 md:mx-auto py-8 md:py-8 font-medium">
+          <p>Copyright © 2025 OROX Global. All Rights Reserved.</p>
 
           <br />
 
           <p>
-            <span className="font-bold">Disclaimer:</span> The materials on this
-            website are for informational and discussion purposes only and do
-            not constitute an offer or solicitation. Any offering may be made
-            solely through a confidential offering memorandum delivered to
-            eligible investors.
+          Separate entities; all rights and obligations are limited to the responsible entity identified in the relevant documentation.  
             <br />
             <br />
-            OROX is a technology platform providing access to algorithmic
-            trading strategies and digital asset tools. The ODN product is a
-            subscription-based service offering exposure to market-neutral
-            strategies. The DVOX token is a utility token that may be staked
-            within the platform to unlock access to benefits linked to a
-            professionally managed digital asset portfolio. DVOX does not confer
-            ownership rights, income entitlement, or equity interest in OROX or
-            any underlying assets, and is not intended to function as a
-            financial product, security, or regulated investment instrument in
-            any jurisdiction.
-            <br />
-            <br />
-            Participation in OROX services involves significant risks, including
-            market volatility and potential loss of capital. Returns are not
-            guaranteed. Past performance is not indicative of future results.
-            Access to the OROX platform and its products is not available to
-            U.S. persons or residents of any jurisdiction where such access
-            would be unlawful or require regulatory licensing. It is the sole
-            responsibility of users to comply with their local laws and
-            regulations.
-            <br />
-            <br />
-            Use of the platform is subject to acceptance of all applicable
-            terms, risk disclosures, and legal documentation. Please review all
-            materials carefully before engaging with any OROX product or token.
+            OROX Global is an ecosystem of independent entities. Participation involves digital-asset risk; rewards (if any) are variable and not guaranteed. Access may be restricted by jurisdiction. <span className={`underline cursor-pointer ${isDarkTheme ? 'text-[#93D9FF]' : 'text-[#2F5DFD]'}`}>Legal & Disclosures</span>
+           
           </p>
         </div>
       </div>

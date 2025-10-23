@@ -4,7 +4,7 @@ import { PartnersMarquee } from "../Partners/PartnersMarquee";
 
 const NewHero = () => {
   return (
-    <section className="relative h-[75vh] md:h-screen w-full flex flex-col justify-between">
+    <section className="relative h-screen w-full flex flex-col justify-between">
       <div className="relative flex-1 w-full">
         <Image
           src="/images/hero/hero.png"

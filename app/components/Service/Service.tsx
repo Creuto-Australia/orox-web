@@ -46,7 +46,7 @@ const Service = ({ tag, description }: ServiceProps) => {
             <span className="text-white text-[14px] md:text-[16px] font-semibold text-transparent mb-[10px] block leading-[18px] md:leading-[24px]">
               {tag}
             </span>
-            <h3 className="text-[16px] md:text-[28px] font-regular mb-[32px] leading-[24px] md:leading-[40px]">
+            <h3 className="text-[16px] md:text-[28px] font-regular mb-[32px] leading-[24px] md:leading-[40px] font-medium">
               {description}
             </h3>
             <button
@@ -76,7 +76,7 @@ const Service = ({ tag, description }: ServiceProps) => {
             <span className="text-white text-[14px] md:text-[16px] font-semibold text-transparent mb-[10px] block leading-[18px] md:leading-[28px]">
               {tag}
             </span>
-            <h3 className="text-[20px] md:text-[20px] lg:text-[24px] font-regular mb-6 leading-[1.3]">
+            <h3 className="text-[20px] md:text-[20px] lg:text-[24px] font-regular mb-6 leading-[1.3] font-medium">
               {description}
             </h3>
             <button
@@ -108,7 +108,7 @@ const Service = ({ tag, description }: ServiceProps) => {
             <span className="text-white text-[14px] md:text-[16px] font-semibold text-transparent mb-[10px] block leading-[18px] md:leading-[24px]">
               {tag}
             </span>
-            <h3 className="text-[28px] font-regular mb-6 leading-[1.2]">
+            <h3 className="text-[28px] font-regular mb-6 leading-[1.2] font-medium">
               {description}
             </h3>
             <button

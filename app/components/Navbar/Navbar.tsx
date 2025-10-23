@@ -523,16 +523,21 @@ export const Navbar = () => {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         isHomePage && !isScrolled
-          ? "bg-transparent text-white border-b md:border-transparent border-[#3C3C3C]"
+          ? "text-white border-b border-[#3C3C3C] md:border-0"
           : `border-b ${
               isDarkTheme
                 ? "bg-[#000000] text-white border-[#3C3C3C]"
                 : "bg-white text-[#19191B] border-[#F4F4F4]"
             }`
       }`}
+      style={{
+        background: isHomePage && !isScrolled 
+          ? "linear-gradient(to bottom, #070926, rgba(7, 9, 38, 0))" 
+          : undefined
+      }}
       ref={navbarRef}
     >
-      <nav className="relative mx-auto max-w-7xl flex items-center justify-between my-[16px] md:my-[24px] px-4 md:px-6 lg:px-0">
+      <nav className="relative mx-auto max-w-7xl flex items-center justify-between my-[16px] md:my-[24px] px-[16px] lg:px-[80px] xl:px-[0px]">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
@@ -809,11 +814,6 @@ export const Navbar = () => {
                       height={24}
                     />
                   </div>
-                  <hr
-                    className={`border-t ${
-                      isDarkTheme ? "border-[#3C3C3C]" : "border-[#F4F4F4]"
-                    }`}
-                  />
                   {/* 
                   <Link
                     href="/"
@@ -841,11 +841,6 @@ export const Navbar = () => {
                   >
                     About
                   </Link>
-                  <hr
-                    className={`border-t ${
-                      isDarkTheme ? "border-[#3C3C3C]" : "border-[#F4F4F4]"
-                    }`}
-                  />
                   <div
                     className={`flex items-center justify-between text-[16px] ${
                       isDarkTheme
@@ -855,11 +850,6 @@ export const Navbar = () => {
                   >
                     <Link href="/contact" className="font-medium">Contact</Link>
                   </div>
-                  <hr
-                    className={`border-t ${
-                      isDarkTheme ? "border-[#3C3C3C]" : "border-[#F4F4F4]"
-                    }`}
-                  />
                 </div>
               </div>
             </div>
