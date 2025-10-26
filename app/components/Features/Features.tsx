@@ -45,7 +45,7 @@ export const Features = ({
   features?: Feature[];
 }) => {
   return (
-    <section className="w-full bg-white px-[16px] py-[48px] md:px-[80px] md:py-[88px]">
+    <section className="relative z-10 w-full bg-white px-[16px] py-[48px] md:px-[80px] md:py-[88px]">
       <div className="mx-auto max-w-7xl">
         <div>
           {/* Header */}
