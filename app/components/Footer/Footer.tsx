@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { PlayStoreButton } from "../ui/PlayStoreButton";
+// import { PlayStoreButton } from "../ui/PlayStoreButton";
 import { AppStoreButton } from "../ui/AppStoreButton";
 import { usePathname } from "next/navigation";
 
@@ -43,7 +43,7 @@ export const Footer = () => {
   return (
     <footer
       className={
-        isDarkTheme ? "bg-[#000000] text-white border-[#3C3C3C]" : "bg-white"
+        isDarkTheme ? "relative z-10 bg-[#000000] text-white border-[#3C3C3C]" : "relative z-10 bg-white"
       }
     >
       <div className="mx-auto max-w-7xl px-4 xl:px-0 py-8 md:py-[88px]">
@@ -100,7 +100,7 @@ export const Footer = () => {
             <div className="lg:hidden">
               <h3 className="text-[18px] font-bold mb-4">Download app</h3>
               <div className="flex gap-2 flex-wrap mb-8">
-                <PlayStoreButton href="https://play.google.com/store/apps/details?id=com.oroxlabs.app.android&hl=en_AU " />
+                {/* <PlayStoreButton href="https://play.google.com/store/apps/details?id=com.oroxlabs.app.android&hl=en_AU " /> */}
                 <AppStoreButton href="https://apps.apple.com/au/app/orox/id6452677869" />
               </div>
             </div>
@@ -265,7 +265,7 @@ export const Footer = () => {
             <div className="hidden lg:flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-[96px]">
               <h3 className="text-[28px] font-bold">Download app</h3>
               <div className="flex gap-2 flex-wrap">
-                <PlayStoreButton href="https://play.google.com/store/apps/details?id=com.oroxlabs.app.android&hl=en_AU " />
+                {/* <PlayStoreButton href="https://play.google.com/store/apps/details?id=com.oroxlabs.app.android&hl=en_AU " /> */}
                 <AppStoreButton href="https://apps.apple.com/au/app/orox/id6452677869" />
               </div>
             </div>

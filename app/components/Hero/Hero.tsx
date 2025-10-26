@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 import { AppStoreButton } from "../ui/AppStoreButton";
-import { PlayStoreButton } from "../ui/PlayStoreButton";
+// import { PlayStoreButton } from "../ui/PlayStoreButton";
 import Link from "next/link";
 import { Button } from "../ui/Button";
 
@@ -75,7 +75,7 @@ export const Hero = () => {
               className="w-[332px] h-full object-contain mb-[32px]"
             />
             <div className="flex flex-wrap items-center gap-[8px] justify-center">
-              <PlayStoreButton href="https://play.google.com/store/apps/details?id=com.oroxlabs.app.android&hl=en_AU" />
+              {/* <PlayStoreButton href="https://play.google.com/store/apps/details?id=com.oroxlabs.app.android&hl=en_AU" /> */}
               <AppStoreButton href="https://apps.apple.com/au/app/orox/id6452677869" />
             </div>
           </div>
@@ -89,7 +89,7 @@ export const Hero = () => {
               className="w-[200px] md:w-[332px] h-full object-contain mb-[32px]"
             />
             <div className="flex flex-wrap items-center gap-2">
-              <PlayStoreButton href="https://play.google.com/store/apps/details?id=com.oroxlabs.app.android&hl=en_AU" />
+              {/* <PlayStoreButton href="https://play.google.com/store/apps/details?id=com.oroxlabs.app.android&hl=en_AU" /> */}
               <AppStoreButton href="https://apps.apple.com/au/app/orox/id6452677869" />
             </div>
           </div>
