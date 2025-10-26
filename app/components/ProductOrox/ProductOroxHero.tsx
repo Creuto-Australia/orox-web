@@ -21,7 +21,7 @@ export const ProductOroxHero = () => {
   return (
     <section className="relative w-full">
       <div className="h-full">
-        <div className="flex flex-col lg:flex-row h-full">
+        <div className="flex flex-col lg:flex-row h-full pt-[21px]">
           {/* Left Content */}
           <div className="py-[48px] px-[16px] md:px-[60px] md:py-[80px] lg:px-[60px] xl:px-[80px] lg:py-[100px] xl:py-[147px] lg:w-1/2">
             <h1 className="text-[#19191B] text-[40px] md:text-[56px] lg:text-[60px] xl:text-[64px] font-bold leading-[48px] md:leading-[64px] lg:leading-[68px]">
