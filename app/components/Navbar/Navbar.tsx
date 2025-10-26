@@ -6,7 +6,7 @@ import { Dropdown, DropdownItem, useDropdown } from "../ui/Dropdown";
 import { Button } from "../ui/Button";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { PlayStoreButton } from "../ui/PlayStoreButton";
+// import { PlayStoreButton } from "../ui/PlayStoreButton";
 import { AppStoreButton } from "../ui/AppStoreButton";
 
 // Product dropdown content component
@@ -833,7 +833,7 @@ export const Navbar = () => {
 
                   <Link
                     href="/about"
-                    className={`block text-[16px] ${
+                    className={`block text-[16px] font-medium ${
                       isDarkTheme
                         ? "text-white hover:bg-white/10"
                         : "text-[#19191B] hover:bg-[#E9E9EF]"
@@ -894,7 +894,7 @@ export const Navbar = () => {
               />
               <div className="mb-[32px]">
                 <div className="flex flex-col items-center gap-[8px]">
-                  <PlayStoreButton href="https://play.google.com/store/apps/details?id=com.oroxlabs.app.android&hl=en_AU" />
+                  {/* <PlayStoreButton href="https://play.google.com/store/apps/details?id=com.oroxlabs.app.android&hl=en_AU" /> */}
                   <AppStoreButton href="https://apps.apple.com/au/app/orox/id6452677869" />
                 </div>
 

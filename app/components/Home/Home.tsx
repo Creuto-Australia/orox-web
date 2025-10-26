@@ -10,7 +10,7 @@ import NewHero from "../Hero/NewHero";
 import { BentoGrid } from "../Bento/BentoGrid";
 export default function LandingPage() {
   return (
-    <>
+    <div className="w-full bg-white">
       <Navbar />
       <NewHero />
       <Features
@@ -30,11 +30,13 @@ export default function LandingPage() {
       {/* <HomeProducts /> */}
       <HomeBlog />
       {/* <FAQ /> */}
-      <Service
-        tag="READY TO INVEST SMARTER?"
-        description="Join OROX and access AI-powered, risk-aware strategies—built to cut through the noise and focus on long-term performance."
-      />
+      <div className="relative z-10 w-full bg-white">
+        <Service
+          tag="READY TO INVEST SMARTER?"
+          description="Join OROX and access AI-powered, risk-aware strategies—built to cut through the noise and focus on long-term performance."
+        />
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }

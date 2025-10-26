@@ -6,32 +6,32 @@ import { useSwipeable } from "react-swipeable";
 const articles = [
   {
     image: "/images/blog/positive.png",
-    title: "Positive Signs for Institutional Investment in Crypto…",
+    title: "BNY Mellon Trials Blockchain Deposits to...",
     description:
-      "President Trump’s second administration painted a new landscape for digital assets and…",
-    link: "https://www.forbes.com/sites/digital-assets/2025/01/24/positive-signs-for-institutional-investment-in-cryptocurrencies/",
+      "The effort aims to enable near-instant settlement and potentially reduce transaction costs, with tokenized deposits moving over a blockchain.",
+    link: "https://www.coindesk.com/business/2025/10/07/bny-mellon-trials-blockchain-deposits-to-overhaul-usd2-5t-payments-processing",
   },
   {
     image: "/images/blog/institutional.jpg",
-    title:
-      "Institutional sentiment points to increased adoption of digital as…",
+    title: "BIS Sets Out Vision for Tokenised Monetary System",
     description:
-      "The digital asset industry experienced significant volatility in 2023 with sustained regulator…",
-    link: "https://www.ey.com/en_us/insights/financial-services/evolving-digital-assets-sentiment-among-investors",
+      "Unified ledger combining central bank money, bank deposits and government bonds aims to modernise global finance",
+    link: "https://fintechnews.ch/blockchain_bitcoin/bis-tokenised-monetary-system-blueprint/77081/",
   },
   {
     image: "/images/blog/volatality.jpg",
-    title: "Controlling Volatility through Market Neutral Investing",
+    title:
+      "From ripples to waves: The transformational power of tokenizing assets",
     description:
-      "Newcomers to share market investing can be surprised to learn there are more ways to tur…",
-    link: "https://thebull.com.au/trading-guides/market-neutral-investment-strategies/",
+      "Tokenized financial assets are moving from pilot to at-scale deployment",
+    link: "https://www.mckinsey.com/industries/financial-services/our-insights/from-ripples-to-waves-the-transformational-power-of-tokenizing-assets",
   },
   {
     image: "/images/blog/investment-magazine.jpg",
-    title: "Why quant investing is having a renaissance with asset owners",
+    title: "Quant hedge funds ride whiplash markets to first-half riches",
     description:
-      "Often touted as the data-based approach to reaping alpha by exploiting human biases, quantit…",
-    link: "https://www.investmentmagazine.com.au/2024/03/why-quant-investing-is-having-a-renaissance-with-asset-owners/",
+      "From Treasury market reversals to trade threats, the first half of 2025 was dominated by policy upheaval and Wall Street angst",
+    link: "https://www.bloomberg.com/news/articles/2025-07-03/quant-hedge-funds-ride-whiplash-markets-to-first-half-riches",
   },
 ];
 
@@ -71,7 +71,7 @@ export const HomeBlog = () => {
   });
 
   return (
-    <section className="w-full px-[16px] py-[48px] md:px-[80px] md:py-[88px] overflow-hidden">
+    <section className="relative z-10 w-full bg-white px-[16px] py-[48px] md:px-[80px] md:py-[88px] overflow-hidden">
       <div className="mx-auto max-w-7xl">
         <div className="space-y-[48px]">
           {/* Header */}

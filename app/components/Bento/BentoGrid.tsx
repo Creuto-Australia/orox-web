@@ -2,9 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const DVOXCard = () => (
-  <div className="w-full lg:flex-[0_0_40%] h-[500px] sm:h-[534px]">
+  <Link href="/products-dvox" className="w-full lg:flex-[0_0_40%] h-[500px] sm:h-[534px] block">
     <div className="relative rounded-3xl overflow-hidden h-full w-full">
       <div className="absolute inset-0 bg-[#12121B]">
         <Image
@@ -42,11 +43,11 @@ const DVOXCard = () => (
         </div>
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 const ODNCard = () => (
-  <div className="w-full lg:flex-[0_0_60%] h-[560px] sm:h-[534px]">
+  <Link href="/products-odn" className="w-full lg:flex-[0_0_60%] h-[560px] sm:h-[534px] block">
     <div className="relative h-full w-full rounded-3xl overflow-hidden">
       <Image
         src="/images/bento/bento-2-bg.png"
@@ -67,7 +68,9 @@ const ODNCard = () => (
 
       <div className="sm:hidden relative z-10 h-full flex flex-col justify-between p-6 overflow-y-hidden">
         <div className="text-white mt-4">
-          <h3 className="text-[28px] font-bold mb-2 leading-[40px]">ODN On-Chain Vaults</h3>
+          <h3 className="text-[28px] font-bold mb-2 leading-[40px]">
+            ODN On-Chain Vaults
+          </h3>
           <p className="text-[16px] text-white leading-[24px] font-medium">
             ODN Vaults are smart-contract programs that implement our systematic
             strategies. Participation can enable program-defined rewards per
@@ -75,7 +78,7 @@ const ODNCard = () => (
             auditability.
           </p>
         </div>
-        
+
         <div className="flex justify-center items-end relative -bottom-40">
           <Image
             src="/images/bento/bento-2-mobile.png"
@@ -89,20 +92,22 @@ const ODNCard = () => (
       </div>
 
       <div className="hidden sm:block relative h-full">
-        <div className="absolute top-1/2 -translate-y-[35%] left-10">
+        <div className="absolute top-1/2 -translate-y-[35%] left-4 lg:left-10">
           <Image
             src="/images/bento/bento-2-mobile.png"
             alt="ODN Mobile App"
             width={1000}
             height={1000}
             priority
-            className="h-[580px] w-auto object-contain hover:scale-105 transition-all duration-300"
+            className="h-[540px] lg:h-[580px] w-auto object-contain hover:scale-105 transition-all duration-300"
           />
         </div>
 
         <div className="absolute bottom-0 right-0 z-10 px-12 pb-12">
           <div className="max-w-md text-white">
-            <h3 className="text-[28px] font-bold mb-2 leading-[40px]">ODN On-Chain Vaults</h3>
+            <h3 className="text-[28px] font-bold mb-2 leading-[40px]">
+              ODN On-Chain Vaults
+            </h3>
             <p className="text-[16px] text-white leading-[24px] font-medium max-w-[340px]">
               ODN Vaults are smart-contract programs that implement our
               systematic strategies. Participation can enable program-defined
@@ -113,11 +118,11 @@ const ODNCard = () => (
         </div>
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 const OROXAppCard = () => (
-  <div className="w-full h-[560px] sm:h-[536px]">
+  <Link href="/products-orox-app" className="w-full h-[560px] sm:h-[536px] block">
     <div className="relative h-full w-full rounded-3xl overflow-hidden bg-[#0C2E74]">
       <Image
         src="/images/bento/bento-3-bg.png"
@@ -134,7 +139,9 @@ const OROXAppCard = () => (
 
       <div className="lg:hidden relative z-10 h-full flex flex-col justify-between p-6">
         <div className="text-white mt-4 text-left">
-          <h3 className="text-[28px] font-bold mb-2 leading-[40px]">OROX+ App</h3>
+          <h3 className="text-[28px] font-bold mb-2 leading-[40px]">
+            OROX+ App
+          </h3>
           <p className="text-[16px] text-white leading-[24px] font-medium">
             Available on iOS and Android, the OROX+ app provides simple access
             to ecosystem programs and tools at your fingertips. Seamlessly
@@ -169,7 +176,9 @@ const OROXAppCard = () => (
 
         <div className="relative h-full flex items-center px-12 pb-12">
           <div className="text-white max-w-md md:max-w-2xl lg:max-w-md text-center">
-            <h3 className="text-[28px] font-bold mb-2 leading-[40px]">OROX+ App</h3>
+            <h3 className="text-[28px] font-bold mb-2 leading-[40px]">
+              OROX+ App
+            </h3>
             <p className="text-[16px] text-white leading-[24px] font-medium">
               Available on iOS and Android, the OROX+ app provides simple access
               to ecosystem programs and tools at your fingertips. Seamlessly
@@ -180,11 +189,11 @@ const OROXAppCard = () => (
         </div>
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 const OpusMomentusCard = () => (
-  <div className="w-full lg:flex-[0_0_60%] h-[500px] sm:h-[488px]">
+  <Link href="https://www.opusmomentus.com/" target="_blank" rel="noopener noreferrer" className="w-full lg:flex-[0_0_60%] h-[500px] sm:h-[488px] block">
     <div className="relative rounded-3xl overflow-hidden h-full w-full bg-[#0A0A0F] ">
       <div className="absolute top-0 left-0 right-0 h-52 lg:h-72 rounded-tl-3xl rounded-tr-3xl overflow-hidden">
         <video
@@ -212,27 +221,27 @@ const OpusMomentusCard = () => (
         </div>
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 const AlphaFundCard = () => (
-  <div className="w-full lg:flex-[0_0_40%] h-[550px] sm:h-[488px]">
+  <div className="w-full lg:flex-[0_0_40%] h-[550px] sm:h-[488px] group">
     <div className="relative rounded-3xl overflow-hidden h-full w-full">
-      <div className="absolute inset-0 hidden lg:block">
+      <div className="absolute inset-0 hidden lg:block overflow-hidden">
         <Image
           src="/images/bento/bento-5-bg.png"
           alt="Background"
           fill
-          className="object-cover"
+          className="object-cover group-hover:scale-110 transition-all duration-500"
         />
       </div>
 
-      <div className="absolute inset-0 block lg:hidden">
+      <div className="absolute inset-0 block lg:hidden overflow-hidden">
         <Image
           src="/images/bento/bento-5-bgsm.png"
           alt="Background"
           fill
-          className="object-cover"
+          className="object-cover group-hover:scale-110 transition-all duration-500"
         />
       </div>
 
@@ -243,8 +252,8 @@ const AlphaFundCard = () => (
         <p className="text-[16px] text-white leading-[24px] font-medium">
           Professionally managed vehicle for qualified investors only. A
           traditional managed fund implementing systematic, quantitative
-          methods; supported by risk controls, independent oversight, and
-          clear operating policies.
+          methods; supported by risk controls, independent oversight, and clear
+          operating policies.
         </p>
       </div>
     </div>
@@ -253,13 +262,13 @@ const AlphaFundCard = () => (
 
 export const BentoGrid = () => {
   return (
-    <section className="w-full bg-white py-12 sm:py-16 lg:py-20 px-4 md:px-8">
+    <section className="relative z-10 w-full bg-white py-12 sm:py-16 lg:py-20 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <p className="text-[16px] font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#4296E4] to-[#383699] text-center mb-[8px]">
             THE OROX ENGINE
           </p>
-          <h2 className="text-[34px] md:text-[56px] font-bold text-[#19191B] leading-[48px] md:leading-[68px] mt-[8px]">
+          <h2 className="text-[34px] md:text-[56px] font-bold text-[#19191B] leading-[44px] md:leading-[68px] mt-[8px] md:max-w-[800px] mx-auto">
             Discover OROX and the components powering it
           </h2>
           <p className="text-[16px] md:text-[20px] text-[#19191B] leading-[24px] md:leading-[32px] mt-[24px] mb-[48px] max-w-[800px] mx-auto font-medium">

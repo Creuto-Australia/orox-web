@@ -15,7 +15,7 @@ const Service = ({ tag, description }: ServiceProps) => {
     }
   };
   return (
-    <div className="container mx-auto sm:[0px] px-[16px] xl:px-[0px] pt-[44px] md:pt-[88px] overflow-hidden max-w-[1280px]">
+    <div className="relative z-10 bg-white container mx-auto sm:[0px] px-[16px] xl:px-[0px] pt-[44px] md:pt-[88px] overflow-hidden max-w-[1280px]">
       {/*<section className="w-full px-[16px] py-[44px] md:px-[80px] md:py-[88px] overflow-hidden">*/}
       {/* Hero Section */}
       <div className="relative h-[600px] md:h-[500px] lg:h-[550px] bg-gradient-to-r from-[#4296E4] to-[#383699] rounded-2xl mb-8 md:mb-12 overflow-visible">
