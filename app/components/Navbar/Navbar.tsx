@@ -524,7 +524,7 @@ export const Navbar = () => {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         isHomePage && !isScrolled && !isDrowpdownOpen
-          ? "text-white border-b border-[#3C3C3C] md:border-0"
+          ? "text-white"
           : `border-b ${
               isDarkTheme
                 ? "bg-[#000000] text-white border-[#3C3C3C]"
