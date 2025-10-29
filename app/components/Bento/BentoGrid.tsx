@@ -91,7 +91,7 @@ const ODNCard = () => (
         </div>
       </div>
 
-      <div className="hidden sm:block relative h-full">
+       <div className="hidden sm:block relative h-full">
         <div className="absolute top-1/2 -translate-y-[35%] left-4 lg:left-10">
           <Image
             src="/images/bento/bento-2-mobile.png"
@@ -99,11 +99,11 @@ const ODNCard = () => (
             width={1000}
             height={1000}
             priority
-            className="h-[540px] lg:h-[580px] w-auto object-contain hover:scale-105 transition-all duration-300"
+            className="h-[540px] lg:h-[480px] xl:h-[580px] w-auto object-contain hover:scale-105 transition-all duration-300"
           />
         </div>
 
-        <div className="absolute bottom-0 right-0 z-10 px-12 pb-12">
+        <div className="absolute bottom-0 right-0 z-10 px-12 lg:pl-[21rem] pb-12">
           <div className="max-w-md text-white">
             <h3 className="text-[28px] font-bold mb-2 leading-[40px]">
               ODN On-Chain Vaults
@@ -268,7 +268,7 @@ export const BentoGrid = () => {
           <p className="text-[16px] font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#4296E4] to-[#383699] text-center mb-[8px]">
             THE OROX ENGINE
           </p>
-          <h2 className="text-[34px] md:text-[56px] font-bold text-[#19191B] leading-[44px] md:leading-[68px] mt-[8px] md:max-w-[800px] mx-auto">
+          <h2 className="text-[34px] md:text-[56px] font-bold text-[#19191B] leading-[44px] md:leading-[68px] mt-[8px] md:max-w-[800px] mx-auto px-[20px]">
             Discover OROX and the components powering it
           </h2>
           <p className="text-[16px] md:text-[20px] text-[#19191B] leading-[24px] md:leading-[32px] mt-[24px] mb-[48px] max-w-[800px] mx-auto font-medium">

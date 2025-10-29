@@ -314,6 +314,7 @@ export const Navbar = () => {
   const [, setNavbarHeight] = useState(70);
   const navbarRef = useRef<HTMLDivElement>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [isDrowpdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Measure navbar height for dropdown positioning
@@ -522,7 +523,7 @@ export const Navbar = () => {
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        isHomePage && !isScrolled
+        isHomePage && !isScrolled && !isDrowpdownOpen
           ? "text-white border-b border-[#3C3C3C] md:border-0"
           : `border-b ${
               isDarkTheme
@@ -530,11 +531,6 @@ export const Navbar = () => {
                 : "bg-white text-[#19191B] border-[#F4F4F4]"
             }`
       }`}
-      style={{
-        background: isHomePage && !isScrolled 
-          ? "linear-gradient(to bottom, #070926, rgba(7, 9, 38, 0))" 
-          : undefined
-      }}
       ref={navbarRef}
     >
       <nav className="relative mx-auto max-w-7xl flex items-center justify-between my-[16px] md:my-[24px] px-[16px] lg:px-[80px] xl:px-[0px]">
@@ -542,7 +538,7 @@ export const Navbar = () => {
         <Link href="/" className="flex-shrink-0">
           <Image
             src={
-              (isHomePage && !isScrolled) || isDarkTheme
+              (isHomePage && !isScrolled && !isDrowpdownOpen) || isDarkTheme
                 ? "/images/logo-white.png"
                 : "/images/logo.png"
             }
@@ -563,14 +559,14 @@ export const Navbar = () => {
           >
             <Button
               variant={
-                isHomePage && !isScrolled
+                isHomePage && !isScrolled && !isDrowpdownOpen
                   ? "secondary"
                   : isDarkTheme
                   ? "secondary"
                   : "primary"
               }
               className={`px-3 py-2 text-sm whitespace-nowrap transition-colors ${
-                isHomePage && !isScrolled
+                isHomePage && !isScrolled && !isDrowpdownOpen
                   ? "!bg-white !text-[#19191B] hover:!bg-gray-100 !border-white"
                   : ""
               }`}
@@ -582,7 +578,7 @@ export const Navbar = () => {
           {/* Mobile menu button */}
           <button
             className={`md:hidden p-2 rounded-full transition-colors ${
-              isHomePage && !isScrolled
+              isHomePage && !isScrolled && !isDrowpdownOpen
                 ? "hover:bg-white/10 text-white"
                 : isDarkTheme
                 ? "hover:bg-white/10 text-white"
@@ -648,10 +644,13 @@ export const Navbar = () => {
           <Dropdown
             label="Products"
             isDarkTheme={isDarkTheme}
+            onUpdate={(val) => {
+              setIsDropdownOpen(val);
+            }}
             trigger={
               <div
                 className={`flex items-center space-x-1 ${
-                  isHomePage && !isScrolled
+                  isHomePage && !isScrolled && !isDrowpdownOpen
                     ? "hover:bg-white/10 text-white"
                     : isDarkTheme
                     ? "hover:bg-white/10 text-white"
@@ -691,7 +690,7 @@ export const Navbar = () => {
           <Link
             href="/about"
             className={`px-3 py-2 rounded-md ${
-              isHomePage && !isScrolled
+              isHomePage && !isScrolled && !isDrowpdownOpen
                 ? "hover:bg-white/10 text-white"
                 : isDarkTheme
                 ? "hover:bg-white/10 text-white"
@@ -703,7 +702,7 @@ export const Navbar = () => {
           <Link
             href="/contact"
             className={`px-3 py-2 rounded-md ${
-              isHomePage && !isScrolled
+              isHomePage && !isScrolled && !isDrowpdownOpen
                 ? "hover:bg-white/10 text-white"
                 : isDarkTheme
                 ? "hover:bg-white/10 text-white"
@@ -942,14 +941,14 @@ export const Navbar = () => {
           >
             <Button
               variant={
-                isHomePage && !isScrolled
+                isHomePage && !isScrolled && !isDrowpdownOpen
                   ? "secondary"
                   : isDarkTheme
                   ? "secondary"
                   : "primary"
               }
               className={`px-3 md:px-4 lg:px-6 whitespace-nowrap transition-colors ${
-                isHomePage && !isScrolled
+                isHomePage && !isScrolled && !isDrowpdownOpen
                   ? "!bg-white !text-[#19191B] hover:!bg-gray-100 !border-white"
                   : ""
               }`}
@@ -960,7 +959,7 @@ export const Navbar = () => {
 
           <hr
             className={`h-[36px] w-[2px] transition-colors ${
-              isHomePage && !isScrolled
+              isHomePage && !isScrolled && !isDrowpdownOpen
                 ? "bg-[#9499C1]"
                 : isDarkTheme
                 ? "bg-[#3C3C3C]"
@@ -972,7 +971,7 @@ export const Navbar = () => {
           <button
             onClick={() => setIsQROpen(!isQROpen)}
             className={`relative flex h-10 w-10 items-center justify-center rounded-[8px] md:p-1.5 lg:p-2 ${
-              isHomePage && !isScrolled
+              isHomePage && !isScrolled && !isDrowpdownOpen
                 ? "hover:bg-white/10"
                 : isDarkTheme
                 ? "hover:bg-[#3C3C3C]"
@@ -982,7 +981,7 @@ export const Navbar = () => {
           >
             <Image
               src={
-                isHomePage && !isScrolled
+                isHomePage && !isScrolled && !isDrowpdownOpen
                   ? "/icons/QR-white.svg"
                   : isDarkTheme
                   ? "/icons/QR-light.svg"
