@@ -6,7 +6,7 @@ import { Dropdown, DropdownItem, useDropdown } from "../ui/Dropdown";
 import { Button } from "../ui/Button";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { PlayStoreButton } from "../ui/PlayStoreButton";
+// import { PlayStoreButton } from "../ui/PlayStoreButton";
 import { AppStoreButton } from "../ui/AppStoreButton";
 
 // Product dropdown content component
@@ -107,7 +107,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
               } rounded-lg p-1 md:p-4`}
             >
               <Link
-                href="https://www.forbes.com/sites/digital-assets/2025/01/24/positive-signs-for-institutional-investment-in-cryptocurrencies/"
+                href="https://www.coindesk.com/business/2025/10/07/bny-mellon-trials-blockchain-deposits-to-overhaul-usd2-5t-payments-processing"
                 onClick={closeDropdown}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -120,8 +120,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
                     isDarkTheme ? "text-white" : "text-[#19191B]"
                   } text-[16px] font-regular`}
                 >
-                  Positive Signs For Institutional Investment In
-                  Cryptocurrencies
+                  BNY Mellon Trials Blockchain Deposits to Overhaul $2.5T Payment Processing
                 </h4>
               </Link>
             </div>
@@ -134,7 +133,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
               } rounded-lg p-1 md:p-4`}
             >
               <Link
-                href="https://www.ey.com/en_us/insights/financial-services/evolving-digital-assets-sentiment-among-investors"
+                href="https://www.mckinsey.com/industries/financial-services/our-insights/from-ripples-to-waves-the-transformational-power-of-tokenizing-assets"
                 onClick={closeDropdown}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -147,8 +146,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
                     isDarkTheme ? "text-white" : "text-[#19191B]"
                   } text-[16px] font-regular`}
                 >
-                  Institutional sentiment points to increased adoption of
-                  digital assets
+                  The transformational power of tokenising assets
                 </h4>
               </Link>
             </div>
@@ -161,7 +159,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
               } rounded-lg p-1 md:p-4`}
             >
               <Link
-                href="https://thebull.com.au/trading-guides/market-neutral-investment-strategies/"
+                href="https://fintechnews.ch/blockchain_bitcoin/bis-tokenised-monetary-system-blueprint/77081"
                 onClick={closeDropdown}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -174,7 +172,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
                     isDarkTheme ? "text-white" : "text-[#19191B]"
                   } text-[16px] font-regular`}
                 >
-                  Controlling Volatility through Market Neutral Investing
+                  BIS Sets Out Vision for Tokenised Monetary System
                 </h4>
               </Link>
             </div>
@@ -306,6 +304,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
 export const Navbar = () => {
   const pathname = usePathname();
   const isDarkTheme = pathname === "/products-dvox";
+  const isHomePage = pathname === "/";
   const [isQROpen, setIsQROpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -313,6 +312,8 @@ export const Navbar = () => {
   const [, setNavbarHeight] = useState(70);
   const navbarRef = useRef<HTMLDivElement>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const [isDrowpdownOpen, setIsDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Measure navbar height for dropdown positioning
   useEffect(() => {
@@ -349,6 +350,20 @@ export const Navbar = () => {
       setIsMobileMenuOpen(false);
     }
   }, [activeDropdown]);
+
+  // Handle scroll to change navbar appearance
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // // Handle body scroll lock when mobile menu is open
   // useEffect(() => {
@@ -505,18 +520,26 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full border-b ${
-        isDarkTheme
-          ? "bg-[#000000] text-white border-[#3C3C3C]"
-          : "bg-white border-[#F4F4F4]"
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+        isHomePage && !isScrolled && !isDrowpdownOpen
+          ? "text-white"
+          : `border-b ${
+              isDarkTheme
+                ? "bg-[#000000] text-white border-[#3C3C3C]"
+                : "bg-white text-[#19191B] border-[#F4F4F4]"
+            }`
       }`}
       ref={navbarRef}
     >
-      <nav className="relative mx-auto max-w-7xl flex items-center justify-between my-[16px] md:my-[24px] px-4 md:px-6 lg:px-0">
+      <nav className="relative mx-auto max-w-7xl flex items-center justify-between my-[16px] md:my-[24px] px-[16px] lg:px-[80px] xl:px-[0px]">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <Image
-            src={isDarkTheme ? "/images/logo-white.png" : "/images/logo.png"}
+            src={
+              (isHomePage && !isScrolled && !isDrowpdownOpen) || isDarkTheme
+                ? "/images/logo-white.png"
+                : "/images/logo.png"
+            }
             alt="OROX"
             width={400}
             height={400}
@@ -525,11 +548,39 @@ export const Navbar = () => {
         </Link>
 
         {/* Mobile menu button and QR section */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 md:space-x-4">
+          <Link
+            href="https://orox.app/join-waitlist"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:hidden"
+          >
+            <Button
+              variant={
+                isHomePage && !isScrolled && !isDrowpdownOpen
+                  ? "secondary"
+                  : isDarkTheme
+                  ? "secondary"
+                  : "primary"
+              }
+              className={`px-3 py-2 text-sm whitespace-nowrap transition-colors ${
+                isHomePage && !isScrolled && !isDrowpdownOpen
+                  ? "!bg-white !text-[#19191B] hover:!bg-gray-100 !border-white"
+                  : ""
+              }`}
+            >
+              Join waitlist
+            </Button>
+          </Link>
+
           {/* Mobile menu button */}
           <button
             className={`md:hidden p-2 rounded-full transition-colors ${
-              isDarkTheme ? "hover:bg-white/10" : "hover:bg-[#E9E9EF]"
+              isHomePage && !isScrolled && !isDrowpdownOpen
+                ? "hover:bg-white/10 text-white"
+                : isDarkTheme
+                ? "hover:bg-white/10 text-white"
+                : "hover:bg-[#E9E9EF] text-[#293483]"
             }`}
             onClick={() => {
               setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -587,15 +638,22 @@ export const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-1 md:space-x-3 lg:space-x-5">
-          <Link href="/products">
           <Dropdown
             label="Products"
             isDarkTheme={isDarkTheme}
+            onUpdate={(val) => {
+              setIsDropdownOpen(val);
+            }}
             trigger={
+            <Link href={'/products'}>
               <div
                 className={`flex items-center space-x-1 ${
-                  isDarkTheme ? "hover:bg-white/10" : "hover:bg-[#E9E9EF]"
-                } rounded-md px-3 py-2 transition-colors`}
+                  isHomePage && !isScrolled && !isDrowpdownOpen
+                    ? "hover:bg-white/10 text-white"
+                    : isDarkTheme
+                    ? "hover:bg-white/10 text-white"
+                    : "hover:bg-[#E9E9EF] text-[#19191B]"
+                } rounded-md px-3 py-2 transition-colors font-medium`}
               >
                 <span>Products</span>
                 <svg
@@ -612,11 +670,11 @@ export const Navbar = () => {
                   />
                 </svg>
               </div>
+            </Link>
             }
           >
             <ProductsDropdown isDarkTheme={isDarkTheme} />
           </Dropdown>
-          </Link>
 
           {/* <Link
             href="/"
@@ -630,16 +688,24 @@ export const Navbar = () => {
           <Link
             href="/about"
             className={`px-3 py-2 rounded-md ${
-              isDarkTheme ? "hover:bg-white/10" : "hover:bg-[#E9E9EF]"
-            } transition-colors`}
+              isHomePage && !isScrolled && !isDrowpdownOpen
+                ? "hover:bg-white/10 text-white"
+                : isDarkTheme
+                ? "hover:bg-white/10 text-white"
+                : "hover:bg-[#E9E9EF] text-[#19191B]"
+            } transition-colors font-medium`}
           >
             About
           </Link>
           <Link
             href="/contact"
             className={`px-3 py-2 rounded-md ${
-              isDarkTheme ? "hover:bg-white/10" : "hover:bg-[#E9E9EF]"
-            } transition-colors`}
+              isHomePage && !isScrolled && !isDrowpdownOpen
+                ? "hover:bg-white/10 text-white"
+                : isDarkTheme
+                ? "hover:bg-white/10 text-white"
+                : "hover:bg-[#E9E9EF] text-[#19191B]"
+            } transition-colors font-medium`}
           >
             Contact
             {/* <Dropdown
@@ -733,7 +799,7 @@ export const Navbar = () => {
                       setActiveSubmenu("products");
                     }}
                   >
-                    <span>Products</span>
+                    <span className="font-medium">Products</span>
                     <Image
                       src={
                         isDarkTheme
@@ -745,11 +811,6 @@ export const Navbar = () => {
                       height={24}
                     />
                   </div>
-                  <hr
-                    className={`border-t ${
-                      isDarkTheme ? "border-[#3C3C3C]" : "border-[#F4F4F4]"
-                    }`}
-                  />
                   {/* 
                   <Link
                     href="/"
@@ -769,7 +830,7 @@ export const Navbar = () => {
 
                   <Link
                     href="/about"
-                    className={`block text-[16px] ${
+                    className={`block text-[16px] font-medium ${
                       isDarkTheme
                         ? "text-white hover:bg-white/10"
                         : "text-[#19191B] hover:bg-[#E9E9EF]"
@@ -777,11 +838,6 @@ export const Navbar = () => {
                   >
                     About
                   </Link>
-                  <hr
-                    className={`border-t ${
-                      isDarkTheme ? "border-[#3C3C3C]" : "border-[#F4F4F4]"
-                    }`}
-                  />
                   <div
                     className={`flex items-center justify-between text-[16px] ${
                       isDarkTheme
@@ -789,13 +845,8 @@ export const Navbar = () => {
                         : "text-[#19191B] hover:bg-[#E9E9EF]"
                     } mb-[16px] transition-colors px-[8px] py-2 rounded-lg mx-[8px]`}
                   >
-                    <Link href="/contact">Contact</Link>
+                    <Link href="/contact" className="font-medium">Contact</Link>
                   </div>
-                  <hr
-                    className={`border-t ${
-                      isDarkTheme ? "border-[#3C3C3C]" : "border-[#F4F4F4]"
-                    }`}
-                  />
                 </div>
               </div>
             </div>
@@ -840,7 +891,7 @@ export const Navbar = () => {
               />
               <div className="mb-[32px]">
                 <div className="flex flex-col items-center gap-[8px]">
-                  <PlayStoreButton href="https://play.google.com/store/apps/details?id=com.oroxlabs.app.android&hl=en_AU" />
+                  {/* <PlayStoreButton href="https://play.google.com/store/apps/details?id=com.oroxlabs.app.android&hl=en_AU" /> */}
                   <AppStoreButton href="https://apps.apple.com/au/app/orox/id6452677869" />
                 </div>
 
@@ -869,7 +920,7 @@ export const Navbar = () => {
 
         {/* Right Section */}
         <div className="hidden md:flex items-center space-x-2 md:space-x-3 lg:space-x-4">
-          <Link
+          {/* <Link
             href="https://orox.app/login"
             target="_blank"
             rel="noopener noreferrer"
@@ -880,32 +931,60 @@ export const Navbar = () => {
             >
               Log in
             </Button>
-          </Link>
+          </Link> */}
           <Link
             href="https://orox.app/join-waitlist"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button
-              variant={isDarkTheme ? "secondary" : "primary"}
-              className="px-3 md:px-4 lg:px-6 whitespace-nowrap"
+              variant={
+                isHomePage && !isScrolled && !isDrowpdownOpen
+                  ? "secondary"
+                  : isDarkTheme
+                  ? "secondary"
+                  : "primary"
+              }
+              className={`px-3 md:px-4 lg:px-6 whitespace-nowrap transition-colors ${
+                isHomePage && !isScrolled && !isDrowpdownOpen
+                  ? "!bg-white !text-[#19191B] hover:!bg-gray-100 !border-white"
+                  : ""
+              }`}
             >
               Join waitlist
             </Button>
           </Link>
 
-          <hr className="h-[36px] w-[2px] bg-[#C9CCE0]" />
+          <hr
+            className={`h-[36px] w-[2px] transition-colors ${
+              isHomePage && !isScrolled && !isDrowpdownOpen
+                ? "bg-[#9499C1]"
+                : isDarkTheme
+                ? "bg-[#3C3C3C]"
+                : "bg-[#C9CCE0]"
+            }`}
+          />
 
           {/* QR Code Button */}
           <button
             onClick={() => setIsQROpen(!isQROpen)}
             className={`relative flex h-10 w-10 items-center justify-center rounded-[8px] md:p-1.5 lg:p-2 ${
-              isDarkTheme ? "hover:bg-[#3C3C3C]" : "hover:bg-[#E9E9EF]"
+              isHomePage && !isScrolled && !isDrowpdownOpen
+                ? "hover:bg-white/10"
+                : isDarkTheme
+                ? "hover:bg-[#3C3C3C]"
+                : "hover:bg-[#E9E9EF]"
             }`}
             aria-label="QR code"
           >
             <Image
-              src={isDarkTheme ? "/icons/QR-light.svg" : "/icons/QR.svg"}
+              src={
+                isHomePage && !isScrolled && !isDrowpdownOpen
+                  ? "/icons/QR-white.svg"
+                  : isDarkTheme
+                  ? "/icons/QR-light.svg"
+                  : "/icons/QR.svg"
+              }
               alt="QR Icon"
               width={20}
               height={20}

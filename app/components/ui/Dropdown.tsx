@@ -23,6 +23,7 @@ interface DropdownProps {
   children: ReactNode;
   label: string;
   isDarkTheme?: boolean;
+  onUpdate?: (isOpen: boolean) => void;
 }
 
 export const Dropdown = ({
@@ -30,6 +31,7 @@ export const Dropdown = ({
   children,
   label,
   isDarkTheme = false,
+  onUpdate,
 }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -90,6 +92,12 @@ export const Dropdown = ({
       },
     },
   };
+
+  useEffect(() => {
+    if(onUpdate) {
+      onUpdate(isOpen);
+    }
+  }, [onUpdate, isOpen]);
 
   return (
     <DropdownContext.Provider value={{ closeDropdown }}>

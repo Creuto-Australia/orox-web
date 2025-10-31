@@ -22,3 +22,78 @@ body {
     scrollbar-width: none;
   }
 }
+
+.hero-sticky {
+  /* force its own compositing layer */
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  /* stop flicker / backface rendering issues */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  /* hint browser to optimize for transform changes */
+  will-change: transform;
+
+  /*
+   * containment and isolation reduce repaint scope on modern browsers,
+   * Safari (including iOS Safari) benefits from these when available.
+   */
+  contain: paint;
+  isolation: isolate;
+}
+
+/*
+ * In some setups, the sticky child (hero-media) being transformed or
+ * having children with transforms can still cause issues; give the inner
+ * area the same compositing hints.
+ */
+.hero-sticky .hero-media {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+  contain: content;
+}
+
+/*
+ * If your page uses a scroll container other than body (e.g., a wrapper
+ * with overflow: auto), ensure momentum scrolling is enabled on iOS.
+ * If you already have -webkit-overflow-scrolling: touch elsewhere, keep it.
+ * Here's a conservative rule that targets common cases:
+ */
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+ * Optionally enable momentum scrolling for any scrollable containers.
+ * Uncomment if you use overflow: auto on a parent scroll container.
+ *
+ * .your-scroll-container {
+ *   -webkit-overflow-scrolling: touch;
+ * }
+ */
+
+/*
+ * Minor extra: ensure sticky z-index is above other content that may jump
+ * during fast scrolls. Adjust as required for your layout.
+ */
+.hero-sticky {
+  z-index: 40; /* keep consistent with Tailwind z- values; tweak if needed */
+}
+
+/*
+ * Safari-specific optimizations: some versions of Safari are finicky and
+ * respond better when backface visibility is applied to all child elements.
+ * Apply conservatively only to immediate children to avoid performance hits.
+ */
+.hero-sticky > * {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
