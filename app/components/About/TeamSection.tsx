@@ -3,12 +3,12 @@ import Image from "next/image";
 const team = [
   {
     name: "Daniel Mo",
-    role: "Chief Executive Officer & Co-founder",
+    role: "Chief Executive Officer & Founder",
     image: "/images/team/daniel-mo.png",
   },
   {
     name: "Daniel Ord",
-    role: "Chief Commercial Officer & Co-founder",
+    role: "Chief Commercial Officer",
     image: "/images/team/daniel-ord.png",
   },
   {

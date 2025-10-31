@@ -33,7 +33,7 @@ export default function LandingPage() {
       <div className="relative z-10 w-full bg-white">
         <Service
           tag="READY TO INVEST SMARTER?"
-          description="Join OROX and access AI-powered, risk-aware strategies—built to cut through the noise and focus on long-term performance."
+          description="Join OROX to access AI-powered, risk-aware strategies–built to cut through the noise with data-driven performance."
         />
       </div>
       <Footer />

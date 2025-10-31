@@ -107,7 +107,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
               } rounded-lg p-1 md:p-4`}
             >
               <Link
-                href="https://www.forbes.com/sites/digital-assets/2025/01/24/positive-signs-for-institutional-investment-in-cryptocurrencies/"
+                href="https://www.coindesk.com/business/2025/10/07/bny-mellon-trials-blockchain-deposits-to-overhaul-usd2-5t-payments-processing"
                 onClick={closeDropdown}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -120,8 +120,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
                     isDarkTheme ? "text-white" : "text-[#19191B]"
                   } text-[16px] font-regular`}
                 >
-                  Positive Signs For Institutional Investment In
-                  Cryptocurrencies
+                  BNY Mellon Trials Blockchain Deposits to Overhaul $2.5T Payment Processing
                 </h4>
               </Link>
             </div>
@@ -134,7 +133,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
               } rounded-lg p-1 md:p-4`}
             >
               <Link
-                href="https://www.ey.com/en_us/insights/financial-services/evolving-digital-assets-sentiment-among-investors"
+                href="https://www.mckinsey.com/industries/financial-services/our-insights/from-ripples-to-waves-the-transformational-power-of-tokenizing-assets"
                 onClick={closeDropdown}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -147,8 +146,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
                     isDarkTheme ? "text-white" : "text-[#19191B]"
                   } text-[16px] font-regular`}
                 >
-                  Institutional sentiment points to increased adoption of
-                  digital assets
+                  The transformational power of tokenising assets
                 </h4>
               </Link>
             </div>
@@ -161,7 +159,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
               } rounded-lg p-1 md:p-4`}
             >
               <Link
-                href="https://thebull.com.au/trading-guides/market-neutral-investment-strategies/"
+                href="https://fintechnews.ch/blockchain_bitcoin/bis-tokenised-monetary-system-blueprint/77081"
                 onClick={closeDropdown}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -174,7 +172,7 @@ const ProductsDropdown = ({ isDarkTheme }: { isDarkTheme?: boolean }) => {
                     isDarkTheme ? "text-white" : "text-[#19191B]"
                   } text-[16px] font-regular`}
                 >
-                  Controlling Volatility through Market Neutral Investing
+                  BIS Sets Out Vision for Tokenised Monetary System
                 </h4>
               </Link>
             </div>
@@ -640,7 +638,6 @@ export const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-1 md:space-x-3 lg:space-x-5">
-          <Link href="/products">
           <Dropdown
             label="Products"
             isDarkTheme={isDarkTheme}
@@ -648,6 +645,7 @@ export const Navbar = () => {
               setIsDropdownOpen(val);
             }}
             trigger={
+            <Link href={'/products'}>
               <div
                 className={`flex items-center space-x-1 ${
                   isHomePage && !isScrolled && !isDrowpdownOpen
@@ -672,11 +670,11 @@ export const Navbar = () => {
                   />
                 </svg>
               </div>
+            </Link>
             }
           >
             <ProductsDropdown isDarkTheme={isDarkTheme} />
           </Dropdown>
-          </Link>
 
           {/* <Link
             href="/"

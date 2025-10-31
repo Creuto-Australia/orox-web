@@ -143,10 +143,7 @@ const OROXAppCard = () => (
             OROX+ App
           </h3>
           <p className="text-[16px] text-white leading-[24px] font-medium">
-            Available on iOS and Android, the OROX+ app provides simple access
-            to ecosystem programs and tools at your fingertips. Seamlessly
-            integrating CeFi and DeFi, it delivers automated outcomes, risk
-            controls and handles execution.
+            Available on iOS and Android, the OROX+ app provides simple access to ecosystem programs and tools at your fingertips. Seamlessly integrating CeFi and DeFi, it delivers automated outcomes and forward-thinking solutions.
           </p>
         </div>
 
@@ -180,10 +177,7 @@ const OROXAppCard = () => (
               OROX+ App
             </h3>
             <p className="text-[16px] text-white leading-[24px] font-medium">
-              Available on iOS and Android, the OROX+ app provides simple access
-              to ecosystem programs and tools at your fingertips. Seamlessly
-              integrating CeFi and DeFi, it delivers automated outcomes, risk
-              controls and handles execution.
+              Available on iOS and Android, the OROX+ app provides simple access to ecosystem programs and tools at your fingertips. Seamlessly integrating CeFi and DeFi, it delivers automated outcomes and forward-thinking solutions.
             </p>
           </div>
         </div>
