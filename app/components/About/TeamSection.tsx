@@ -75,7 +75,7 @@ export const TeamSection = () => {
                   <h3 className="mt-[24px] text-[20px] md:text-[24px] lg:text-[28px] font-bold text-[#19191B] leading-[32px] md:leading-[36px] lg:leading-[40px]">
                     {member.name}
                   </h3>
-                  <p className="text-[#19191B] text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[28px] lg:leading-[32px] mt-[8px] w-[308px]">
+                  <p className="text-[#19191B] text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[28px] lg:leading-[32px] mt-[8px]">
                     {member.role}
                   </p>
                 </div>
@@ -96,7 +96,7 @@ export const TeamSection = () => {
                   <h3 className="mt-[24px] text-[20px] md:text-[24px] lg:text-[28px] font-bold text-[#19191B] leading-[32px] md:leading-[36px] lg:leading-[40px]">
                     {member.name}
                   </h3>
-                  <p className="text-[#19191B] text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[28px] lg:leading-[32px] mt-[8px] w-[308px]">
+                  <p className="text-[#19191B] text-[16px] md:text-[18px] lg:text-[20px] leading-[24px] md:leading-[28px] lg:leading-[32px] mt-[8px]">
                     {member.role}
                   </p>
                 </div>
