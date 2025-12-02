@@ -16,11 +16,11 @@ const team = [
     role: "Chief Product & Operations Officer",
     image: "/images/team/andrew-mo.png",
   },
-  {
-    name: "Agam Lamba",
-    role: "Chief Customer & Digital Officer",
-    image: "/images/team/agam-lamba.png",
-  },
+  // {
+  //   name: "Agam Lamba",
+  //   role: "Chief Customer & Digital Officer",
+  //   image: "/images/team/agam-lamba.png",
+  // },
   {
     name: "Barabasi Zoltan",
     role: "Lead Engineer",
