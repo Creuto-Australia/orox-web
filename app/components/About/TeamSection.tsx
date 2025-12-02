@@ -16,11 +16,6 @@ const team = [
     role: "Chief Product & Operations Officer",
     image: "/images/team/andrew-mo.png",
   },
-  // {
-  //   name: "Agam Lamba",
-  //   role: "Chief Customer & Digital Officer",
-  //   image: "/images/team/agam-lamba.png",
-  // },
   {
     name: "Barabasi Zoltan",
     role: "Lead Engineer",
@@ -36,6 +31,11 @@ const team = [
     role: "Quantitative Alpha Researcher",
     image: "/images/team/elia-belloni.png",
   },
+  // {
+  //   name: "Agam Lamba",
+  //   role: "Chief Customer & Digital Officer",
+  //   image: "/images/team/agam-lamba.png",
+  // },
 ];
 
 export const TeamSection = () => {
@@ -61,8 +61,8 @@ export const TeamSection = () => {
           </div>
 
           <div className="grid gap-[48px]">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-[48px] md:gap-[32px] lg:gap-[48px] justify-items-center max-w-6xl mx-auto">
-              {team.slice(0, 4).map((member) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[48px] md:gap-[32px] lg:gap-[48px] justify-items-center max-w-6xl mx-auto">
+              {team.slice(0, 3).map((member) => (
                 <div key={member.name} className="text-center">
                   <div className="relative h-40 w-40 md:h-44 md:w-44 lg:h-48 lg:w-48 mx-auto">
                     <Image
@@ -83,7 +83,7 @@ export const TeamSection = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-[48px] md:gap-[32px] lg:gap-[48px] justify-items-center max-w-4xl mx-auto">
-              {team.slice(4, 7).map((member) => (
+              {team.slice(3, 6).map((member) => (
                 <div key={member.name} className="text-center">
                   <div className="relative h-40 w-40 md:h-44 md:w-44 lg:h-48 lg:w-48 mx-auto">
                     <Image
