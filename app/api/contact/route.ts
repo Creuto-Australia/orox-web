@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
         const mailOptions = {
             from: 'info.opusmomentus@gmail.com',
             to: 'info@oroxglobal.com',
-            subject: `Contact Form Submission - ${validatedData.reason}`,
+            subject: `Contact Form Submission - ${validatedData.reason}`,   // FIXED
             html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #19191B; border-bottom: 2px solid #4296E4; padding-bottom: 10px;">
@@ -46,18 +46,17 @@ ${validatedData.message ? `
 </div>
         </div>
 `,
-            text: `
-        New Contact Form Submission
+            text: `New Contact Form Submission
 
-        Name: ${validatedData.name}
-        Email: ${validatedData.email}
-        Mobile: ${validatedData.mobile}
-        Reason: ${validatedData.reason}
+Name: ${validatedData.name}
+Email: ${validatedData.email}
+Mobile: ${validatedData.mobile}
+Reason: ${validatedData.reason}
 
-        ${validatedData.message ? `Message:\n${validatedData.message}` : ''}
+${validatedData.message ? `Message:\n${validatedData.message}\n` : ''}
 
-        Submitted on: ${new Date().toLocaleString()}
-`,
+Submitted on: ${new Date().toLocaleString()}
+`, // FIXED
         };
 
         await transporter.sendMail(mailOptions);
