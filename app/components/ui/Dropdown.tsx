@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, useEffect, ReactNode, createContext, useContext } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import {motion, AnimatePresence, Variants, Transition} from "framer-motion";
 
 // Create a context to pass the close function to children
 interface DropdownContextType {
@@ -73,23 +73,17 @@ export const Dropdown = ({
   };
 
   // Animation variants for the dropdown
-  const dropdownVariants = {
+  const dropdownVariants: Variants = {
     hidden: { opacity: 0, y: -5 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.1,
-        ease: "easeOut",
-      },
+      transition: ({ duration: 0.1, ease: [0.33, 1, 0.68, 1] } as unknown as Transition),
     },
     exit: {
       opacity: 0,
       y: -5,
-      transition: {
-        duration: 0.1,
-        ease: "easeIn",
-      },
+      transition: ({ duration: 0.1, ease: [0.55, 0.055, 0.675, 0.19] } as unknown as Transition),
     },
   };
 
