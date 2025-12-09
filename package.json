@@ -12,10 +12,10 @@
     "@types/nodemailer": "^7.0.0",
     "framer-motion": "^12.6.2",
     "lucide-react": "^0.475.0",
-    "next": "15.1.9",
+    "next": "^16.0.8",
     "nodemailer": "^7.0.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "react-fast-marquee": "^1.6.5",
     "recharts": "^2.15.3",
     "swiper": "^12.0.3",
@@ -24,12 +24,12 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "eslint": "^9",
-    "eslint-config-next": "15.1.7",
+    "eslint-config-next": "^16.0.8",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   }
 }
