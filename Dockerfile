@@ -2,7 +2,7 @@
 FROM node:20-alpine
 
 # Install tools missing in Alpine (useradd, iostat, bash)
-RUN apk add --no-cache shadow sysstat bash
+# RUN apk add --no-cache shadow sysstat bash
 
 # Create app directory
 WORKDIR /usr/src/app
