@@ -17,6 +17,11 @@ const team = [
     image: "/images/team/andrew-mo.png",
   },
   {
+    name: "Agam Lamba",
+    role: "Chief Customer & Digital Officer",
+    image: "/images/team/agam-lamba.png",
+  },
+  {
     name: "Barabasi Zoltan",
     role: "Lead Engineer",
     image: "/images/team/barabasi-zoltan.png",
@@ -30,11 +35,6 @@ const team = [
     name: "Elia Belloni",
     role: "Quantitative Alpha Researcher",
     image: "/images/team/elia-belloni.png",
-  },
-  {
-    name: "Agam Lamba",
-    role: "Chief Customer & Digital Officer",
-    image: "/images/team/agam-lamba.png",
   },
 ];
 
