@@ -8,12 +8,12 @@ const team = [
   },
   {
     name: "Daniel Ord",
-    role: "Chief Commercial Officer",
+    role: "Head of Commercial & Co-founder",
     image: "/images/team/daniel-ord.png",
   },
   {
     name: "Andrew Mo",
-    role: "Chief Product & Operations Officer",
+    role: "Head of Product & Operations",
     image: "/images/team/andrew-mo.png",
   },
   {
