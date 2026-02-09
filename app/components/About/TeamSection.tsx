@@ -21,16 +21,16 @@ const team = [
     role: "Lead Engineer",
     image: "/images/team/barabasi-zoltan.png",
   },
-  {
-    name: "Kim Dao",
-    role: "Growth Manager — ASEAN",
-    image: "/images/team/kim-dao.png",
-  },
-  {
-    name: "Elia Belloni",
-    role: "Quantitative Alpha Researcher",
-    image: "/images/team/elia-belloni.png",
-  },
+  // {
+  //   name: "Kim Dao",
+  //   role: "Growth Manager — ASEAN",
+  //   image: "/images/team/kim-dao.png",
+  // },
+  // {
+  //   name: "Elia Belloni",
+  //   role: "Quantitative Alpha Researcher",
+  //   image: "/images/team/elia-belloni.png",
+  // },
   // {
   //   name: "Agam Lamba",
   //   role: "Chief Customer & Digital Officer",
@@ -60,9 +60,9 @@ export const TeamSection = () => {
             </p>
           </div>
 
-          <div className="grid gap-[48px]">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-[48px] md:gap-[32px] lg:gap-[48px] justify-items-center max-w-6xl mx-auto">
-              {team.slice(0, 3).map((member) => (
+          <div className="flex flex-col items-center gap-[48px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[48px] md:gap-[32px] lg:gap-[48px] justify-items-center max-w-2xl w-full mx-auto">
+              {team.slice(0, 2).map((member) => (
                 <div key={member.name} className="text-center">
                   <div className="relative h-40 w-40 md:h-44 md:w-44 lg:h-48 lg:w-48 mx-auto">
                     <Image
@@ -82,8 +82,8 @@ export const TeamSection = () => {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-[48px] md:gap-[32px] lg:gap-[48px] justify-items-center max-w-4xl mx-auto">
-              {team.slice(3, 6).map((member) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[48px] md:gap-[32px] lg:gap-[48px] justify-items-center max-w-2xl w-full mx-auto">
+              {team.slice(2, 6).map((member) => (
                 <div key={member.name} className="text-center">
                   <div className="relative h-40 w-40 md:h-44 md:w-44 lg:h-48 lg:w-48 mx-auto">
                     <Image
