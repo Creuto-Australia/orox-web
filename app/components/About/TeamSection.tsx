@@ -61,7 +61,7 @@ export const TeamSection = () => {
           </div>
 
           <div className="grid gap-[48px]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[48px] md:gap-[32px] lg:gap-[48px] justify-items-center max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-[48px] md:gap-[32px] lg:gap-[48px] justify-items-center max-w-4xl mx-auto">
               {team.slice(0, 3).map((member) => (
                 <div key={member.name} className="text-center">
                   <div className="relative h-40 w-40 md:h-44 md:w-44 lg:h-48 lg:w-48 mx-auto">
