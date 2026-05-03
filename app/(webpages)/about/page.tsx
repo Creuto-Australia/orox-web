@@ -15,7 +15,7 @@ export default function AboutPage() {
       {/* <ProductsSection /> */}
       <ValuesSection />
       <MissionSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
       {/* <StatsSection /> */}
       <InvestingSection />
     </div>
