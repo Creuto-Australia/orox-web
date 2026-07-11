@@ -13,7 +13,7 @@ ENV DEBUG $DEBUG
 
 # Copy app dependencies
 #COPY package*.json yarn.lock ./
-#
+#Run
 RUN chmod 2777 "/usr/src/app"
 
 COPY . /usr/src/app
