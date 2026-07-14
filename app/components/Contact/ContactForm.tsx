@@ -134,7 +134,7 @@ export default function ContactForm() {
           {/* Form */}
           <form
             onSubmit={handleSubmit}
-            className="w-full py-[24px] px-[24px] border border-[#E5E5E5] rounded-3xl space-y-[24px] md:space-y-[16px]"
+            className="w-full py-[24px] px-[24px] border border-[#E5E5E5] rounded-3xl shadow-[0_8px_24px_rgba(25,25,27,0.08)] space-y-[24px] md:space-y-[16px]"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[24px] md:gap-[16px]">
               {/* Name Field */}
